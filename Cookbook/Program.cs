@@ -1,20 +1,18 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Cookbook.Data;
-var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<CookbookContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("CookbookContext") ?? throw new InvalidOperationException("Connection string 'CookbookContext' not found.")));
+using Microsoft.EntityFrameworkCore;
 
-// if (builder.Environment.IsDevelopment())
-// {
-//     builder.Services.AddDbContext<CookbookContext>(options =>
-//         options.UseSqlite(builder.Configuration.GetConnectionString("CookbookContext")));
-// }
-// else
-// {
-//     builder.Services.AddDbContext<CookbookContext>(options =>
-//         options.UseSqlServer(builder.Configuration.GetConnectionString("ProductionCookbookContext")));
-// }
+var builder = WebApplication.CreateBuilder(args);
+
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddDbContext<CookbookContext>(options =>
+        options.UseSqlite(builder.Configuration.GetConnectionString("CookbookContext")));
+}
+else  
+{
+    builder.Services.AddDbContext<CookbookContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("ProductionCookbookContext")));
+}
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
