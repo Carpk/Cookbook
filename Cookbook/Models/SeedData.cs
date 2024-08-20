@@ -24,7 +24,7 @@ public static class SeedData
                 new Recipe
                 {
                     Title = "Mongolian Beef",
-                    Cuisine = "Chinse"
+                    Cuisine = "Chinese"
                 },
                 new Recipe
                 {

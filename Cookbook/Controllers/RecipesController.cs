@@ -20,8 +20,22 @@ namespace Cookbook.Controllers
         }
 
         // GET: Recipes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string id)
         {
+            if (_context.Recipe == null)
+            {
+                return Problem("Entity set 'RecipeContext.Movie'  is null.");
+            }
+
+            // LINQ query 
+            var recipes = from r in _context.Recipe
+                        select r;
+
+            if (!String.IsNullOrEmpty(id))
+            {
+                recipes = recipes.Where(s => s.Title!.ToUpper().Contains(id.ToUpper()));
+            }
+
             return View(await _context.Recipe.ToListAsync());
         }
 
