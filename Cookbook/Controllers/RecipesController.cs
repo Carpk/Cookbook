@@ -20,23 +20,30 @@ namespace Cookbook.Controllers
         }
 
         // GET: Recipes
-        public async Task<IActionResult> Index(string id)
+        public async Task<IActionResult> Index(string searchString)
         {
             if (_context.Recipe == null)
             {
-                return Problem("Entity set 'RecipeContext.Movie'  is null.");
+                return Problem("Entity set 'Cookbook.Context.Movie'  is null.");
             }
 
             // LINQ query 
             var recipes = from r in _context.Recipe
                         select r;
 
-            if (!String.IsNullOrEmpty(id))
+            
+            if (!String.IsNullOrEmpty(searchString))
             {
-                recipes = recipes.Where(s => s.Title!.ToUpper().Contains(id.ToUpper()));
+                recipes = recipes.Where(s => s.Title!.ToUpper().Contains(searchString.ToUpper()));
             }
 
-            return View(await _context.Recipe.ToListAsync());
+            return View(await recipes.ToListAsync());
+        }
+
+        [HttpPost]
+        public string Index(string searchString, bool notUsed)
+        {
+            return "From [HttpPost]Index: filter on " + searchString;
         }
 
         // GET: Recipes/Details/5
