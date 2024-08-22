@@ -24,22 +24,42 @@ public static class SeedData
                 new Recipe
                 {
                     Title = "Mongolian Beef",
-                    Cuisine = "Chinese"
+                    Cuisine = "Chinese",
+                    Rating = 4.5,
+                    Cooktime = 20,
+                    Description = "good",
+                    Ingredients = "beef, garlic, ginger",
+                    Directions = "cook & serve"
                 },
                 new Recipe
                 {
                     Title = "Fettuccine Alfredo",
-                    Cuisine = "Italian"
+                    Cuisine = "Italian",
+                    Rating = 4.5,
+                    Cooktime = 20,
+                    Description = "good",
+                    Ingredients = "fettuccine noodles, alfredo sauce",
+                    Directions = "cook & serve"
                 },
                 new Recipe
                 {
                     Title = "Egg and Cabbage",
-                    Cuisine = "Chinese"
+                    Cuisine = "Chinese",
+                    Rating = 4.5,
+                    Cooktime = 20,
+                    Description = "good",
+                    Ingredients = "egg, cabbage",
+                    Directions = "cook & serve"
                 },
                 new Recipe
                 {
                     Title = "Chicken with Tomatoes and Olives",
-                    Cuisine = "Mediterranean"
+                    Cuisine = "Mediterranean",
+                    Rating = 4.5,
+                    Cooktime = 20,
+                    Description = "good",
+                    Ingredients = "chicken, tomatoes, olives",
+                    Directions = "cook & serve"
                 }
             );
             context.SaveChanges();

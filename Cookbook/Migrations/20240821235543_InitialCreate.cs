@@ -17,7 +17,12 @@ namespace Cookbook.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Title = table.Column<string>(type: "TEXT", nullable: true),
-                    Cuisine = table.Column<string>(type: "TEXT", nullable: true)
+                    Cuisine = table.Column<string>(type: "TEXT", nullable: true),
+                    Rating = table.Column<double>(type: "REAL", nullable: true),
+                    Cooktime = table.Column<int>(type: "INTEGER", nullable: true),
+                    Description = table.Column<string>(type: "varchar(200)", nullable: true),
+                    Ingredients = table.Column<string>(type: "TEXT", nullable: true),
+                    Directions = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
