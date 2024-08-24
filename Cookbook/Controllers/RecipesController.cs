@@ -20,33 +20,11 @@ namespace Cookbook.Controllers
         }
 
         // GET: Recipes
-        // public async Task<IActionResult> Index(string searchString)
-        // {
-        //     if (_context.Recipe == null)
-        //     {
-        //         return Problem("Entity set 'Cookbook.Context.Movie'  is null.");
-        //     }
-
-        //     // LINQ query 
-        //     var recipes = from r in _context.Recipe
-        //                 select r;
-
-            
-        //     if (!String.IsNullOrEmpty(searchString))
-        //     {
-        //         recipes = recipes.Where(s => s.Title!.ToUpper().Contains(searchString.ToUpper()));
-        //     }
-
-        //     return View(await recipes.ToListAsync());
-        // }
-
-
-        // GET: Movies
         public async Task<IActionResult> Index(string recipeCuisine, string searchString)
         {
             if (_context.Recipe == null)
             {
-                return Problem("Entity set 'MvcMovieContext.Movie'  is null.");
+                return Problem("Entity set 'CookbookContext.Movie'  is null.");
             }
 
             // Use LINQ to get list of genres.
@@ -75,8 +53,7 @@ namespace Cookbook.Controllers
             return View(recipeCuisineVM);
         }
 
-
-
+        // POST: Recipes
         [HttpPost]
         public string Index(string searchString, bool notUsed)
         {

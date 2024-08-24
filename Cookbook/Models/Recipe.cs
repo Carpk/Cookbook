@@ -16,6 +16,7 @@ public class Recipe
 
     [Display(Name = "Cook Time")]
     [DataType(DataType.Time)]
+    [DisplayFormat(DataFormatString = "{0;c}", ApplyFormatInEditMode = true)]
     public int? Cooktime { get; set; }
 
     [Column(TypeName = "varchar(255)")]
