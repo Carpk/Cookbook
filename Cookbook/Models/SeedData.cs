@@ -25,16 +25,18 @@ public static class SeedData
                 {
                     Title = "Mongolian Beef",
                     Cuisine = "Chinese",
+                    Image = "https://placehold.co/370x250",
                     Rating = 4.5,
                     Cooktime = 20,
                     Description = "good",
                     Ingredients = "beef, garlic, ginger",
-                    Directions = "cook & serve"
+                    Directions = "1. cook \n 2. serve"
                 },
                 new Recipe
                 {
                     Title = "Fettuccine Alfredo",
                     Cuisine = "Italian",
+                    Image = "https://placehold.co/370x250",
                     Rating = 4.5,
                     Cooktime = 20,
                     Description = "good",
@@ -45,6 +47,7 @@ public static class SeedData
                 {
                     Title = "Egg and Cabbage",
                     Cuisine = "Chinese",
+                    Image = "https://placehold.co/370x250",
                     Rating = 4.5,
                     Cooktime = 20,
                     Description = "good",
@@ -55,6 +58,7 @@ public static class SeedData
                 {
                     Title = "Chicken with Tomatoes and Olives",
                     Cuisine = "Mediterranean",
+                    Image = "https://placehold.co/370x250",
                     Rating = 4.5,
                     Cooktime = 20,
                     Description = "good",

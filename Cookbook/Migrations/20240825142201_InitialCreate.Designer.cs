@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cookbook.Migrations
 {
     [DbContext(typeof(CookbookContext))]
-    [Migration("20240821235543_InitialCreate")]
+    [Migration("20240825142201_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -33,9 +33,12 @@ namespace Cookbook.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Directions")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Image")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Ingredients")
@@ -45,6 +48,8 @@ namespace Cookbook.Migrations
                         .HasColumnType("REAL");
 
                     b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

@@ -10,6 +10,8 @@ public class Recipe
     [StringLength(60, MinimumLength = 3)]
     [Required]
     public string? Title { get; set; }     public string? Cuisine { get; set; }
+
+    public string? Image { get; set; }
     
     [Range(1, 10)]
     public double? Rating {  get; set; }

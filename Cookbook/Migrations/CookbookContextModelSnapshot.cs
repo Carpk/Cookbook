@@ -30,9 +30,12 @@ namespace Cookbook.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Directions")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Image")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Ingredients")
@@ -42,6 +45,8 @@ namespace Cookbook.Migrations
                         .HasColumnType("REAL");
 
                     b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
