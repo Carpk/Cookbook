@@ -17,8 +17,6 @@ public class Recipe
     public double? Rating {  get; set; }
 
     [Display(Name = "Cook Time")]
-    [DataType(DataType.Time)]
-    [DisplayFormat(DataFormatString = "{0;c}", ApplyFormatInEditMode = true)]
     public int? Cooktime { get; set; }
 
     [Column(TypeName = "varchar(255)")]
@@ -27,4 +25,15 @@ public class Recipe
     public string? Ingredients { get; set; }
 
     public string? Directions { get; set; }
+
+
+    public string[] IngredientsList()
+    {
+        return Ingredients.Split(',');
+    }
+
+    public string[] DirectionsList()
+    {
+        return Directions.Split('.');
+    }
 }

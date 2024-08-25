@@ -25,12 +25,15 @@ public static class SeedData
                 {
                     Title = "Mongolian Beef",
                     Cuisine = "Chinese",
-                    Image = "https://placehold.co/370x250",
+                    Image = "https://www.kitchensanctuary.com/wp-content/uploads/2020/08/Mongolian-Beef-square-FS-22.jpg",
                     Rating = 4.5,
                     Cooktime = 20,
                     Description = "good",
-                    Ingredients = "beef, garlic, ginger",
-                    Directions = "1. cook \n 2. serve"
+                    Ingredients = "1lb flank steak, 2 green onions, 4 cloves of garlic, ½ teaspoon ginger, ½ cup soy sauce, ¼ cup water, ⅓ cup cornstarch, ½ cup brown sugar",
+                    Directions = "Slice the flank steak into thin ¼ inch pieces, Toss with cornstarch, shaking off any excess " + 
+                        "and set aside. In a 10-inch skillet, heat 2 teaspoons of oil over medium-low heat, stir in minced ginger " +
+                        "and garlic and cook until fragrant, about one minute. Add soy sauce, water, and brown sugar to the skillet, " +
+                        "then bring to a boil for 3-5 minutes until slightly thickened."
                 },
                 new Recipe
                 {
